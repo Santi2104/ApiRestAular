@@ -12,17 +12,17 @@ class AcademicSchedule extends Model
 
     public function course()
     {
-        return $this->belongsToMany(Course::class);
+        return $this->belongsTo(Course::class);
     }
 
     public function classroom()
     {
-        return $this->belongsToMany(Classroom::class);
+        return $this->belongsTo(Classroom::class);
     }
 
     public function schedule()
     {
-        return $this->belongsToMany(Schedule::class);
+        return $this->belongsTo(Schedule::class);
     }
 
     public function classType()

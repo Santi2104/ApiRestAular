@@ -32,4 +32,8 @@ Route::namespace('Api')->group(function () {
     Route::get('careers', 'CareerController@index');
     Route::get('careers/{id}', 'CareerController@show');
 
+
+    Route::get('horarios', 'AcademicScheduleController@index');
+    Route::get('horarios/{id}', 'AcademicScheduleController@show');
+
 });

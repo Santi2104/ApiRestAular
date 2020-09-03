@@ -20,7 +20,8 @@ class AcademicScheduleResource extends JsonResource
             'course' => new CourseResource($this->course),
             'classroom' => new ClassroomResource($this->classroom),
             'class_type' => new ClassTypeResource($this->classType),
-            'schedule' => new ScheduleResource($this->schedule)
+            'schedule' => new ScheduleResource($this->schedule),
+            'team' =>  ProfessorScheduleResource::collection($this->professorSchedule)
         ];
     }
 }

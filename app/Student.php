@@ -18,6 +18,6 @@ class Student extends Model
 
     public function studentSchedule()
     {
-        return $this->belongsToMany(StudentSchedule::class);
+        return $this->hasMany(StudentSchedule::class);
     }
 }

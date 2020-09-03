@@ -29,4 +29,9 @@ class AcademicSchedule extends Model
     {
         return $this->belongsTo(ClassType::class);
     }
+
+    public function professorSchedule()
+    {
+        return $this->hasMany(ProfessorSchedule::class);
+    }
 }

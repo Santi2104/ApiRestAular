@@ -1,5 +1,6 @@
 <?php
 
+use App\ProfessorRole;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PeriodSeeder::class);
         $this->call(ScheduleSeeder::class);
         $this->call(ClassTypeSeeder::class);
+        $this->call(ProfessorRoleSeeder::class);
 
         
 

@@ -19,6 +19,11 @@ class Professor extends Model
 
     public function professorSchedule()
     {
-        return $this->belongsToMany(ProfessorSchedule::class);
+        return $this->hasMany(ProfessorSchedule::class);
+    }
+
+    public function roles()
+    {
+        return $this->hasManyThrough(ProfessorRole::class, ProfessorSchedule::class, 'professor_role_id', 'id');
     }
 }

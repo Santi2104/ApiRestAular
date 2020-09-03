@@ -8,13 +8,18 @@ class ProfessorSchedule extends Model
 {
     protected $fillable = ['professor_id', 'academic_schedule_id'];
 
-    public function professors()
+    public function professor()
     {
-        return $this->belongsToMany(Student::class);
+        return $this->belongsTo(Professor::class);
     }
 
     public function academicSchedule()
     {
-        return $this->belongsToMany(AcademicSchedule::class);
+        return $this->belongsTo(AcademicSchedule::class);
+    }
+
+    public function professorRole()
+    {
+        return $this->belongsTo(ProfessorRole::class);
     }
 }

@@ -23,6 +23,10 @@ class CreateProfessorSchedulesTable extends Migration
             ->constrained()
             ->onDelete('cascade')
             ->OnUpdate('cascade');
+            $table->foreignId('professor_role_id')
+            ->constrained()
+            ->onDelete('cascade')
+            ->OnUpdate('cascade');
             $table->timestamps();
         });
     }

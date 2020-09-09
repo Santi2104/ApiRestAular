@@ -103,5 +103,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AcademicScheduleSeeder::class);
         $this->call(StudentScheduleSeeder::class);
         $this->call(ProfessorScheduleSeeder::class);
+        $this->call(CourseProfessorSeeder::class);
+
     }
 }

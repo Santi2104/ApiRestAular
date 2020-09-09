@@ -18,8 +18,4 @@ class ProfessorSchedule extends Model
         return $this->belongsTo(AcademicSchedule::class);
     }
 
-    public function professorRole()
-    {
-        return $this->belongsTo(ProfessorRole::class);
-    }
 }

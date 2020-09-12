@@ -10,4 +10,9 @@ class ProfessorRole extends Model
     {
         return $this->hasMany(ProfessorSchedule::class);
     }
+
+    public function professors()
+    {
+        return $this->belongsToMany(Professor::class,'course_professor');
+    }
 }

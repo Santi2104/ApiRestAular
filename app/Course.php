@@ -20,4 +20,15 @@ class Course extends Model
     {
         return $this->belongsToMany(AcademicSchedule::class);
     }
+
+    public function professors()
+    {
+        return $this->belongsToMany(Professor::class);
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(ProfessorRole::class,'course_professor');
+    }
+
 }

@@ -17,7 +17,9 @@ class CourseResource extends JsonResource
         return [
             'id' => $this->id,
             'code' => $this->code .': '. $this->title,
-            'career' => new CareerResource($this->career)
+            'career' => new CareerResource($this->career),
+            'team' => ProfessorResource::collection($this->professors),
+            'role' => ProfessorRoleResource::collection($this->roles)
         ];
     }
 }

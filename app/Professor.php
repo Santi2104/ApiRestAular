@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use \App\ProfessorRole;
 
 
 class Professor extends Model
@@ -24,6 +25,11 @@ class Professor extends Model
 
     public function roles()
     {
-        return $this->hasManyThrough(ProfessorRole::class, ProfessorSchedule::class, 'professor_role_id', 'id');
+        return $this->belongsToMany(ProfessorRole::class, 'course_professor')->withPivot('course_id');
+    }
+
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class)->withPivot('professor_id', 'professor_role_id');
     }
 }

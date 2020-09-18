@@ -53,4 +53,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Professor::class);
     }
+
+    public static function navigation(){
+        return auth()->check() ? auth()->user()->role->name : 'guest';
+     }
 }

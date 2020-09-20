@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -36,5 +36,34 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    protected function redirectTo()
+    {
+        if (auth()->user()->role->name == 'admin') {
+    
+            return 'admin';
+    
+        }elseif(auth()->user()->role->name == 'bedelAplicadas'){
+    
+            return 'bedel-aplicadas/dashboard';
+    
+        }elseif(auth()->user()->role->name == 'bedelExactas'){
+    
+            return 'bedel-exactas/dashboard';
+    
+        }elseif(auth()->user()->role->name == 'bedelSalud'){
+    
+            return 'bedel-salud/dashboard';
+    
+        }elseif(auth()->user()->role->name == 'bedelSociales'){
+    
+            return 'bedel-sociales/dashboard';
+    
+        }elseif(auth()->user()->role->name == 'bedelHumanidades'){
+    
+            return 'bedel-humanidades/dashboard';
+        }
+    
     }
 }

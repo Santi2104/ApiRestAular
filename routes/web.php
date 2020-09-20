@@ -22,5 +22,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
-    Route::get('/', 'AdminController@dashboard');
+    Route::get('/', 'AdminController@dashboard')->name('admin.dashboard');
+
+    //Departamentos
+    Route::get('/departments', 'DepartmentController@index')->name('department.index');
+    Route::get('/departments/create', 'DepartmentController@create')->name('department.create');
+    Route::post('/departments', 'DepartmentController@store')->name('department.store');
+    Route::get('/departments/{id}/edit', 'DepartmentController@edit')->name('department.edit');
+    Route::put('/departments/{id}', 'DepartmentController@update')->name('department.update');
+    Route::delete('/departments/{id}', 'DepartmentController@destroy')->name('department.destroy');
 });

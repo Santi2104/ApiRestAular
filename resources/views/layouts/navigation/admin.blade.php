@@ -2,37 +2,115 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
       <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
-      <li class="nav-item has-treeview menu-open">
-        <a href="#" class="nav-link active">
+           <li class="nav-item">
+           <a href="{{route('admin.dashboard')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Home
+              </p>
+            </a>
+          </li>
+      <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
           <i class="nav-icon fas fa-tachometer-alt"></i>
           <p>
-            Starter Pages Admin
+            Administracion
             <i class="right fas fa-angle-left"></i>
           </p>
         </a>
         <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="#" class="nav-link active">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Active Page</p>
-            </a>
-          </li>
-          <li class="nav-item">
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Inactive Page</p>
+              <p>
+                Unidades Academicas
+                <i class="right fas fa-angle-left"></i>
+              </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <a href="{{route('department.index')}}" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Mostrar todo</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('department.create')}}" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Crear</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Level 3</p>
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">
-          <i class="nav-icon fas fa-th"></i>
-          <p>
-            Simple Link
-            <span class="right badge badge-danger">New</span>
-          </p>
-        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                  Carreras
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p>Level 3</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p>Level 3</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p>Level 3</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav nav-treeview">
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>
+                  Materias
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p>Level 3</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p>Level 3</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-dot-circle nav-icon"></i>
+                    <p>Level 3</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
       </li>
     </ul>
   </nav>

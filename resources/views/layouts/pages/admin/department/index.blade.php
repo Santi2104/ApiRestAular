@@ -12,6 +12,7 @@
 @section('contenido') 
 <div class="row">
     <div class="col-md-8">
+        <a href="{{route('department.create')}}" class="btn btn-primary mb-2">Crear unidad academica</a>
         <div class="card">
             <div class="card-body">
                 <table class="table table-bordered">
@@ -30,9 +31,13 @@
                             <td>{{$depto->display_name}}</td>
                             <td>{{$depto->created_at}}</td>
                             <td>
-                                <a href="{{route('department.edit', $depto->id)}}" type="button" class="btn btn-block btn-outline-primary">Editar</a>
-                                <!-- Falta el bonton de eliminar que no funca -->
-                                <a href="{{route('department.destroy', $depto->id)}}" type="button" class="btn btn-block btn-outline-danger">Eliminar</a>
+                                <a href="{{route('department.edit', $depto->id)}}" type="button"
+                                    class="btn btn-block btn-outline-primary">Editar</a>
+                                <form role="form" method="POST" action="{{route('department.destroy', $depto->id)}}">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-block btn-outline-danger mt-2">Eliminar</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

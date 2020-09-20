@@ -29,7 +29,8 @@
                   </div>
                 </div>
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Enviar</button>
+                    <a href="{{route('department.index')}}" class="btn btn-primary">Volver</a>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
               </form>
         </div>

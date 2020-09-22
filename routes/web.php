@@ -31,4 +31,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/departments/{id}/edit', 'DepartmentController@edit')->name('department.edit');
     Route::put('/departments/{id}', 'DepartmentController@update')->name('department.update');
     Route::delete('/departments/{id}', 'DepartmentController@destroy')->name('department.destroy');
+
+    //Carreras
+    Route::get('/careers', 'CareerController@index')->name('career.index');
+    Route::get('/careers/create', 'CareerController@create')->name('career.create');
+    Route::get('/careers/{id}', 'CareerController@show')->name('career.show');
+    Route::post('/careers', 'CareerController@store')->name('career.store');
+    Route::get('/careers/{id}/edit', 'CareerController@edit')->name('career.edit');
+    Route::put('/careers/{id}', 'CareerController@update')->name('career.update');
 });

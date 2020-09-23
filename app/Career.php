@@ -20,4 +20,9 @@ class Career extends Model
     {
         return $this->hasMany(Course::class);
     }
+
+    public function scopeWhereLike($query, $column, $value)
+{
+    return $query->where($column, 'like', '%'.$value.'%');
+}
 }

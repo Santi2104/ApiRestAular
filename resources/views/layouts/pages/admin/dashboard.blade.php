@@ -10,7 +10,7 @@
         <h1>Hola desde el Dashboard del administrador</h1>
         {{--Esto es una demo del buscador basico--}}
         {{--Es para probar, despues sera eliminada--}}
-        <form action="{{route('api.careers.search')}}">
+        <form action="{{route('api.course.search')}}">
                 @csrf
                 <input type="search" name="search" id="search">
                 <button type="submit">Enviar</button>

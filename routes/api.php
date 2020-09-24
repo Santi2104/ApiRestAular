@@ -34,6 +34,8 @@ Route::namespace('Api')->group(function () {
     Route::get('careers/{id}', 'CareerController@show');
 
 
+    //ruta para la busqueda de horarios por materia
+    Route::get('course/search', 'CourseController@search')->name('api.course.search');
 
 
     Route::get('horarios', 'AcademicScheduleController@index');

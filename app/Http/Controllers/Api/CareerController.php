@@ -40,7 +40,7 @@ class CareerController extends Controller
      */
     public function show($id)
     {
-        return new AcademicScheduleResource(AcademicSchedule::find($id));
+        //
     }
 
     /**
@@ -64,5 +64,12 @@ class CareerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request){
+
+        $busqueda = $request->get('search');
+        $carrera = Career::where('name', 'like', '%'.$busqueda.'%')->get();
+        return $carrera;
     }
 }

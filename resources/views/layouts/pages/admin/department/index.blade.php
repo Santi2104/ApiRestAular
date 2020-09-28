@@ -11,7 +11,7 @@
 @endsection
 @section('contenido') 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
         <a href="{{route('department.create')}}" class="btn btn-primary mb-2">Crear unidad academica</a>
         <div class="card">
             <div class="card-body">

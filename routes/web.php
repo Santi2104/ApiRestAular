@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('prueba', function () {
+    return view('prueba');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -39,4 +43,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/careers', 'CareerController@store')->name('career.store');
     Route::get('/careers/{id}/edit', 'CareerController@edit')->name('career.edit');
     Route::put('/careers/{id}', 'CareerController@update')->name('career.update');
+
+    //Materias
+    Route::get('/courses', 'CourseController@index')->name('course.index');
+    Route::get('/courses/create', 'CourseController@create')->name('course.create');
+    Route::post('/courses', 'CourseController@store')->name('course.store');
+    Route::get('/courses/{id}/edit', 'CourseController@edit')->name('course.edit');
+    Route::put('/courses/{id}', 'CourseController@update')->name('course.update');
 });

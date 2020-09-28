@@ -5,6 +5,11 @@
  */
 
 require('./bootstrap');
+require('admin-lte');
+require( '../../node_modules/admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.js' );
+require( '../../node_modules/admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js' );
+require( '../../node_modules/admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js' );
+require( '../../node_modules/admin-lte/plugins/select2/js/select2.full.min.js' );
 
 window.Vue = require('vue');
 
@@ -20,7 +25,9 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('career-component', require('./components/admin/CareerComponent.vue').default);
+Vue.component('career-component', require('./components/admin/Career/CareerComponent.vue').default);
+Vue.component('course-component', require('./components/admin/Course/CourseComponent.vue').default);
+Vue.component('select-career', require('./components/admin/Course/SelectCareerComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -5,7 +5,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" id="example1">
                             <thead>
                                 <tr>
                                     <th style="width: 30px">Codigo</th>
@@ -34,7 +34,7 @@
 export default {
     props: ['data','ruta'],
     mounted() {
-        //console.log(this.setUrl());
+        this.setTable();
     },
     data() {
         return {
@@ -45,7 +45,19 @@ export default {
     methods: {
         setUrl: function(id){
             return `${this.ruta}/admin/careers/${id}/edit`;
+        },
+        setTable: function(){
+                $("#example1").DataTable({
+                    "paging": true,
+                    "lengthChange": false,
+                    "searching": true,
+                    "ordering": true,
+                    "info": true,
+                    "autoWidth": false,
+                    "responsive": true,
+                });
         }
+
     },
 
 };

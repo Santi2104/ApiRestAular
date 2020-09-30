@@ -38,7 +38,7 @@
                   </div>
                 </div>
                 <div class="card-footer">
-                    <a href="{{route('course.index')}}" class="btn btn-primary">Volver</a>
+                    <a href="{{route('career.course.index', $materia->career->id)}}" class="btn btn-primary">Volver</a>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>

@@ -114,4 +114,9 @@ class CourseController extends Controller
     {
         //
     }
+
+    public function coursesCareer($id){
+        $materias = Course::where('career_id', $id)->with('career')->get();
+        return view('layouts.pages.admin.career.index-course', compact('materias'));
+    }
 }

@@ -20,7 +20,10 @@
                                     <th>{{carrera.name}}</th>
                                     <th>{{carrera.department.display_name}}</th>
                                     <th><a :href="setUrl(carrera.id)" type="button"
-                                    class="btn btn-block btn-outline-primary">Editar</a></th>
+                                    class="btn btn-block btn-outline-primary">Editar</a>
+                                    <a :href="setUrlCareer(carrera.id)" type="button"
+                                    class="btn btn-block btn-outline-warning">Ver materias</a>
+                                    </th>
                                 </tr>
                             </tbody>
                         </table>
@@ -56,6 +59,9 @@ export default {
                     "autoWidth": false,
                     "responsive": true,
                 });
+        },
+        setUrlCareer: function(id){
+            return `${this.ruta}/admin/careers/${id}/courses`;
         }
 
     },

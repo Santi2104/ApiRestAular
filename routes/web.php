@@ -43,6 +43,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/careers', 'CareerController@store')->name('career.store');
     Route::get('/careers/{id}/edit', 'CareerController@edit')->name('career.edit');
     Route::put('/careers/{id}', 'CareerController@update')->name('career.update');
+    Route::get('/careers/{id}/courses', 'CourseController@coursesCareer')->name('career.course.index');
 
     //Materias
     Route::get('/courses', 'CourseController@index')->name('course.index');

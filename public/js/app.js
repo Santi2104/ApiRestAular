@@ -2261,6 +2261,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['data', 'ruta'],
   mounted: function mounted() {
@@ -2285,6 +2288,9 @@ __webpack_require__.r(__webpack_exports__);
         "autoWidth": false,
         "responsive": true
       });
+    },
+    setUrlCareer: function setUrlCareer(id) {
+      return "".concat(this.ruta, "/admin/careers/").concat(id, "/courses");
     }
   }
 });
@@ -55131,6 +55137,18 @@ var render = function() {
                             }
                           },
                           [_vm._v("Editar")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-block btn-outline-warning",
+                            attrs: {
+                              href: _vm.setUrlCareer(carrera.id),
+                              type: "button"
+                            }
+                          },
+                          [_vm._v("Ver materias")]
                         )
                       ])
                     ])

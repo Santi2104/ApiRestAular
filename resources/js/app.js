@@ -28,6 +28,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('career-component', require('./components/admin/Career/CareerComponent.vue').default);
 Vue.component('course-component', require('./components/admin/Course/CourseComponent.vue').default);
 Vue.component('select-career', require('./components/admin/Course/SelectCareerComponent.vue').default);
+Vue.component('classroom-component', require('./components/admin/classroom/ClassroomComponent.vue').default);
+Vue.component('show-schedule', require('./components/admin/classroom/ShowScheduleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

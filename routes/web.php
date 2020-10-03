@@ -51,4 +51,19 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/courses', 'CourseController@store')->name('course.store');
     Route::get('/courses/{id}/edit', 'CourseController@edit')->name('course.edit');
     Route::put('/courses/{id}', 'CourseController@update')->name('course.update');
+
+    //Edificios
+    Route::get('/buildings', 'BuildingController@index')->name('building.index');
+    Route::get('/buildings/create', 'BuildingController@create')->name('building.create');
+    Route::post('/buildings', 'BuildingController@store')->name('building.store');
+    Route::get('/buildings/{id}/edit', 'BuildingController@edit')->name('building.edit');
+    Route::put('buildings/{id}', 'BuildingController@update')->name('building.update');
+
+    //Aulas
+    Route::get('/classrooms', 'ClassroomController@index')->name('classroom.index');
+    Route::get('/classrooms/create', 'ClassroomController@create')->name('classroom.create');
+    Route::post('/classrooms', 'ClassroomController@store')->name('classroom.store');
+    Route::get('/classrooms/{id}', 'ClassroomController@show')->name('classroom.show');
+    Route::get('/classrooms/{id}/edit', 'ClassroomController@edit')->name('classroom.edit');
+    Route::put('/classrooms/{id}', 'ClassroomController@update')->name(('classroom.update'));
 });

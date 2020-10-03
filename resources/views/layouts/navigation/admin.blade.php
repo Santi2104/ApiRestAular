@@ -47,47 +47,38 @@
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                    Administracion
+                    Espacios Aulicos
                     <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
             <ul class="nav nav-treeview">
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                <li class="nav-item">
+                    <a href="{{route('building.index')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
-                            Unidades Academicas
-                            <i class="right fas fa-angle-left"></i>
+                            Edificios
+                            
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('department.index')}}" class="nav-link">
-                                <i class="far fa-dot-circle nav-icon"></i>
-                                <p>Mostrar todo</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('department.create')}}" class="nav-link">
-                                <i class="far fa-dot-circle nav-icon"></i>
-                                <p>Crear</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-dot-circle nav-icon"></i>
-                                <p>Level 3</p>
-                            </a>
-                        </li>
-                    </ul>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{route('classroom.index')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>
+                            Aulas
+                            
+                        </p>
+                    </a>
                 </li>
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
+                 <a href="#" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
-                            Carreras
+                            Aulas
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>

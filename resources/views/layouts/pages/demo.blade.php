@@ -7,7 +7,7 @@
 @endsection
 
 @section('subtitulo')
-    <h1 class="m-0 text-dark">Listado de Unidades academicas</h1>
+    <h1 class="m-0 text-dark">Detalle de la materia</h1>
 @endsection
 
 @section('contenido') 

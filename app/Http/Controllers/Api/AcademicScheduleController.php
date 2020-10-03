@@ -67,4 +67,13 @@ class AcademicScheduleController extends Controller
     {
         //
     }
+
+    public function classroomSchedule($id){
+
+
+
+        $academics = AcademicSchedule::where('classroom_id', $id)->get();
+
+        return response()->json(['data' => AcademicScheduleResource::collection($academics)]);
+    }
 }

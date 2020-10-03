@@ -38,7 +38,11 @@ Route::namespace('Api')->group(function () {
     Route::get('course/search', 'CourseController@search')->name('api.course.search');
 
 
+
     Route::get('horarios', 'AcademicScheduleController@index');
+    Route::get('horarios/aulas/{id}', 'AcademicScheduleController@classroomSchedule')->name('api.horarios.aula');
     Route::get('horarios/{id}', 'AcademicScheduleController@show');
+;
+
 
 });

@@ -17,7 +17,7 @@ class AcademicScheduleResource extends JsonResource
         return [
             'id' => $this->id,
             'status' => $this->status,
-            //'course' => new CourseResource($this->course),
+            'course' => new CourseResource($this->course),
             'classroom' => new ClassroomResource($this->classroom),
             'class_type' => new ClassTypeResource($this->classType),
             'schedule' => new ScheduleResource($this->schedule)

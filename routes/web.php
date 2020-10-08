@@ -66,4 +66,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/classrooms/{id}', 'ClassroomController@show')->name('classroom.show');
     Route::get('/classrooms/{id}/edit', 'ClassroomController@edit')->name('classroom.edit');
     Route::put('/classrooms/{id}', 'ClassroomController@update')->name(('classroom.update'));
+
+    //Periodos
+    Route::get('/periods', 'PeriodController@index')->name('period.index');
+    Route::get('/periods/create', 'PeriodController@create')->name('period.create');
+    Route::post('/periods', 'PeriodController@store')->name('period.store');
+    Route::get('/periods/{id}/edit', 'PeriodController@edit')->name('period.edit');
+    Route::put('/periods/{id}', 'PeriodController@update')->name('period.update');
 });

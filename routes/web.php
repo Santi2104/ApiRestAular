@@ -73,4 +73,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/periods', 'PeriodController@store')->name('period.store');
     Route::get('/periods/{id}/edit', 'PeriodController@edit')->name('period.edit');
     Route::put('/periods/{id}', 'PeriodController@update')->name('period.update');
+
+    //Horarios
+    Route::get('/schedules', 'ScheduleController@index')->name('schedule.index');
+    Route::post('/schedules', 'ScheduleController@store')->name('schedule.store');
 });

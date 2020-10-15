@@ -15,6 +15,8 @@
                 <input type="search" name="search" id="search">
                 <button type="submit">Enviar</button>
         </form>
+
+        <example-component></example-component>
 @endsection
 
 @section('foot') 

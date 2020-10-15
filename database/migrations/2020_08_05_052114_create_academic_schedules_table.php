@@ -31,6 +31,9 @@ class CreateAcademicSchedulesTable extends Migration
             ->constrained()
             ->onDelete('cascade')
             ->OnUpdate('cascade');
+            $table->string('day')->nullable();
+            $table->string('start')->nullable();
+            $table->string('end')->nullable();
             $table->string('description')->nullable();
             $table->string('message')->nullable();//Por si hay algun mensaje especial. Estoy probando
             $table->boolean('status')->default(1);

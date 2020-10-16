@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ClassroomSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(PeriodSeeder::class);
-        $this->call(ScheduleSeeder::class);
+        //$this->call(ScheduleSeeder::class);
         $this->call(ClassTypeSeeder::class);
-        $this->call(ProfessorRoleSeeder::class);
+        //$this->call(ProfessorRoleSeeder::class);
 
         
 
@@ -100,10 +100,10 @@ class DatabaseSeeder extends Seeder
             factory(\App\Professor::class, 1)->create(['user_id' => $u->id]);
         });
 
-        $this->call(AcademicScheduleSeeder::class);
-        $this->call(StudentScheduleSeeder::class);
-        $this->call(ProfessorScheduleSeeder::class);
-        $this->call(CourseProfessorSeeder::class);
+      //  $this->call(AcademicScheduleSeeder::class);
+      //  $this->call(StudentScheduleSeeder::class);
+      //  $this->call(ProfessorScheduleSeeder::class);
+      //  $this->call(CourseProfessorSeeder::class);
 
     }
 }

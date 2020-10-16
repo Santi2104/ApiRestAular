@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\AcademicSchedule;
 use App\Classroom;
 use App\ClassType;
 use App\Course;
@@ -78,6 +79,15 @@ class ScheduleController extends Controller
        $periodofinal = CarbonPeriod::create($fechafin2,'7 days' ,$fechafin);
        $b= $periodofinal->toArray();
 
+       $academic = AcademicSchedule::create([
+        'course_id' => $request->course_id,
+        'classroom_id' => $request->classroom_id,
+        'class_type_id' => $request->class_type_id,
+        'day' => $arregloDias[$diainicial],
+        'start' => $request->start1,
+        'end' => $request->end1
+       ]);
+
        foreach($periodoinicial as $key => $a){
            $c = Schedule::create([
                'period_id' => $request->period_id,
@@ -86,15 +96,8 @@ class ScheduleController extends Controller
                'color' => $request->color
            ]);
 
-           $c->academicSchedule()->create([
-             'course_id' => $request->course_id,
-             'classroom_id' => $request->classroom_id,
-             'class_type_id' => $request->class_type_id,
-             'schedule_id' => $c->id,
-             'day' => $arregloDias[$diainicial],
-             'start' => $request->start1,
-             'end' => $request->end1
-           ]);
+           $c->academicSchedule()->attach($academic);
+
        };
        
        return redirect()->back();

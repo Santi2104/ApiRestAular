@@ -22,7 +22,7 @@ class AcademicSchedule extends Model
 
     public function schedule()
     {
-        return $this->belongsTo(Schedule::class);
+        return $this->belongsToMany(Schedule::class, 'academic_schedule_union');
     }
 
     public function classType()

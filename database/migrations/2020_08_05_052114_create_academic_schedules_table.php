@@ -23,10 +23,10 @@ class CreateAcademicSchedulesTable extends Migration
             ->constrained()
             ->onDelete('cascade')
             ->OnUpdate('cascade');
-            $table->foreignId('schedule_id')
-            ->constrained()
-            ->onDelete('cascade')
-            ->OnUpdate('cascade');
+       //     $table->foreignId('schedule_id')
+       //     ->constrained()
+       //     ->onDelete('cascade')
+       //     ->OnUpdate('cascade');
             $table->foreignId('class_type_id')
             ->constrained()
             ->onDelete('cascade')

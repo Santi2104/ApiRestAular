@@ -15,8 +15,9 @@
                     <blockquote>
                         <p>{{ horario.course.code }}</p>
                         <small>{{ horario.class_type.name }} </small><br>
-                        <small>{{ horario.schedule.start }} </small>
-                        <small>{{ horario.schedule.end }} </small>
+                        <small>{{ horario.day }} </small>
+                        <small>{{ horario.start}} </small>
+                        <small>{{ horario.end }} </small>
                     </blockquote>
                 </div>
                 <!-- /.card-body -->

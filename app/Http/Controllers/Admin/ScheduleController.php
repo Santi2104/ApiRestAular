@@ -12,6 +12,7 @@ use App\Schedule;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ScheduleController extends Controller
 {
@@ -111,7 +112,10 @@ class ScheduleController extends Controller
      */
     public function show($id)
     {
-        //
+        $academico = AcademicSchedule::find($id);
+        $a = $academico->schedule;
+
+        return view('layouts.pages.admin.schedule.show' , compact('a'));
     }
 
     /**
@@ -146,5 +150,31 @@ class ScheduleController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function exactas(){
+
+        $datos = DB::table('academic_schedules')
+                    ->join('courses','course_id', '=', 'courses.id')
+                    ->join('careers','career_id', '=', 'careers.id')
+                    ->join('departments','department_id', '=', 'departments.id')
+                    ->select('courses.title', 'careers.name' ,'academic_schedules.*')
+                    ->where('departments.id', 1)
+                    ->latest()
+                    ->limit(4)
+                    ->get();
+
+        $horarios = DB::table('academic_schedules')
+                    ->join('courses','course_id', '=', 'courses.id')
+                    ->join('careers','career_id', '=', 'careers.id')
+                    ->join('departments','department_id', '=', 'departments.id')
+                    ->join('classrooms', 'classroom_id', '=', 'classrooms.id')
+                    ->join('class_types', 'class_type_id', '=', 'class_types.id')
+                    ->select('courses.title', 'classrooms.name as aula' ,'class_types.name as tipo_clase', 'careers.name', 'academic_schedules.day', 'academic_schedules.start','academic_schedules.end', 'academic_schedules.status' , 'academic_schedules.id')
+                    ->where('departments.id', 1)
+                    ->get();
+
+
+        return view('layouts.pages.admin.schedule.index-exactas', compact('datos', 'horarios'));
     }
 }

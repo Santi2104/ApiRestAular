@@ -77,4 +77,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     //Horarios
     Route::get('/schedules', 'ScheduleController@index')->name('schedule.index');
     Route::post('/schedules', 'ScheduleController@store')->name('schedule.store');
+   
+
+    //Horarios del depto de exactas
+    Route::get('/schedules/exactas', 'ScheduleController@exactas')->name('schedule.exactas.index');
+
+    Route::get('/schedules/{id}', 'ScheduleController@show')->name('schedule.show');
 });

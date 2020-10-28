@@ -19,6 +19,6 @@ class Schedule extends Model
 
     public function academicSchedule()
     {
-        return $this->belongsToMany(AcademicSchedule::class);
+        return $this->belongsToMany(AcademicSchedule::class,'academic_schedule_union');
     }
 }

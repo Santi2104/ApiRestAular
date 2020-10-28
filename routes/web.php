@@ -73,4 +73,19 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/periods', 'PeriodController@store')->name('period.store');
     Route::get('/periods/{id}/edit', 'PeriodController@edit')->name('period.edit');
     Route::put('/periods/{id}', 'PeriodController@update')->name('period.update');
+
+    //Horarios
+    Route::get('/schedules', 'ScheduleController@index')->name('schedule.index');
+    Route::post('/schedules', 'ScheduleController@store')->name('schedule.store');
+   
+
+    //Horarios del depto de exactas
+    Route::get('/schedules/exactas', 'ScheduleController@exactas')->name('schedule.exactas.index');
+
+    Route::get('/schedules/{id}', 'ScheduleController@show')->name('schedule.show');
+
+    //Usuarios
+    Route::get('/users-admin', 'UserController@index')->name('user.admin.index');
+    Route::get('/users-student', 'UserController@index')->name('user.student.index');
+    Route::get('/users-professor', 'UserController@index')->name('user.professor.index');
 });

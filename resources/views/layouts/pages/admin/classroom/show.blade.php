@@ -76,7 +76,7 @@
     <!-- /.col -->
   </div>
   <h2>Horarios Asignados a esta aula</h2>
-  <show-schedule aula="{{$aula->id}}"></show-schedule>
+  <show-classroom-schedule aula="{{$aula->id}}"></show-classroom-schedule>
 @endsection
 
 @section('foot') 

@@ -9,7 +9,6 @@ require('admin-lte');
 require( '../../node_modules/admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.js' );
 require( '../../node_modules/admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js' );
 require( '../../node_modules/admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js' );
-require( '../../node_modules/admin-lte/plugins/select2/js/select2.full.min.js' );
 
 window.Vue = require('vue');
 
@@ -29,14 +28,20 @@ Vue.component('career-component', require('./components/admin/Career/CareerCompo
 Vue.component('course-component', require('./components/admin/Course/CourseComponent.vue').default);
 Vue.component('select-career', require('./components/admin/Course/SelectCareerComponent.vue').default);
 Vue.component('classroom-component', require('./components/admin/classroom/ClassroomComponent.vue').default);
-Vue.component('show-schedule', require('./components/admin/classroom/ShowScheduleComponent.vue').default);
+Vue.component('show-classroom-schedule', require('./components/admin/classroom/ShowClassroomScheduleComponent.vue').default);
+Vue.component('last-schedule', require('./components/admin/schedule/LastScheduleComponent.vue').default);
+Vue.component('schedule-table', require('./components/admin/schedule/ScheduleTableComponent.vue').default);
+Vue.component('show-schedule', require('./components/admin/schedule/ShowScheduleComponent.vue').default)
+Vue.component('admin-table-component', require('./components/admin/user/AdminTableComponent.vue').default)
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+import BootstrapVue from 'bootstrap-vue';
+Vue.use(BootstrapVue);
 const app = new Vue({
     el: '#app',
 });

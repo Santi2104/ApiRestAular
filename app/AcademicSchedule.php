@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AcademicSchedule extends Model
 {
 
-    protected $fillable = ['course_id', 'classroom_id', 'schedule_id', 'class_type_id' ,'description', 'message', 'status'];
+    protected $fillable = ['course_id', 'classroom_id', 'schedule_id', 'class_type_id' ,'description', 'message', 'status', 'day', 'start', 'end'];
 
     public function course()
     {
@@ -22,7 +22,7 @@ class AcademicSchedule extends Model
 
     public function schedule()
     {
-        return $this->belongsTo(Schedule::class);
+        return $this->belongsToMany(Schedule::class, 'academic_schedule_union');
     }
 
     public function classType()

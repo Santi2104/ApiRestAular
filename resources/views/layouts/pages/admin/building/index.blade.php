@@ -20,33 +20,7 @@
         </div>
         @endif
         <a href="{{route('building.create')}}" class="btn btn-primary mb-2">Crear espacio aulico</a>
-        <div class="card">
-            <div class="card-body">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th style="width: 10px">#</th>
-                            <th>Nombre</th>
-                            <th>Fecha de creación</th>
-                            <th>Fecha de creación</th>
-                            <th style="width: 40px">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($edificios as $edificio)
-                        <tr>
-                            <td>{{$edificio->id}}</td>
-                            <td>{{$edificio->display_name}}</td>
-                            <td>{{$edificio->description}}</td>
-                            <td>{{$edificio->created_at}}</td>
-                            <td><a href="{{route('building.edit', $edificio->id)}}" type="button"
-                                class="btn btn-block btn-outline-primary">Editar</a></td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <example-component data="{{$edificios}}"></example-component>
     </div>
 </div>
         

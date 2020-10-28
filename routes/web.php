@@ -83,4 +83,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/schedules/exactas', 'ScheduleController@exactas')->name('schedule.exactas.index');
 
     Route::get('/schedules/{id}', 'ScheduleController@show')->name('schedule.show');
+
+    //Usuarios
+    Route::get('/users-admin', 'UserController@index')->name('user.admin.index');
+    Route::get('/users-student', 'UserController@index')->name('user.student.index');
+    Route::get('/users-professor', 'UserController@index')->name('user.professor.index');
 });

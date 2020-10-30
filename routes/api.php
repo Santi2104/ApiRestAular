@@ -52,7 +52,8 @@ Route::namespace('Api')->group(function () {
     Route::get('horarios', 'AcademicScheduleController@index');
     Route::get('horarios/aulas/{id}', 'AcademicScheduleController@classroomSchedule')->name('api.horarios.aula');
     Route::get('horarios/{id}', 'AcademicScheduleController@show');
-;
 
+    Route::get('students', 'StudentController@index');//Con esta ruta obtenes los horarios para el calendario (mandas solo el id del usuario)
+    Route::post('students', 'StudentController@store');//Con esta ruta cargas los horarios (mandas id de usuario y arreglo de horarios)
 
 });

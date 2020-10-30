@@ -16,8 +16,8 @@ class Student extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function studentSchedule()
+    public function studentSchedules()
     {
-        return $this->hasMany(StudentSchedule::class);
+        return $this->belongsToMany(AcademicSchedule::class,'student_schedules');
     }
 }

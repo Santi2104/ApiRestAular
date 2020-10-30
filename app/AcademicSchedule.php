@@ -34,4 +34,9 @@ class AcademicSchedule extends Model
     {
         return $this->hasMany(ProfessorSchedule::class);
     }
+
+    public function students()
+    {
+        return $this->belongsToMany(Student::class,'student_schedules');
+    }
 }

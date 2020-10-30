@@ -6,8 +6,12 @@
 
 @endsection
 
+@section('subtitulo')
+        <h1>Bienvenido de nuevo {{Auth()->user()->name}}</h1>
+@endsection
+
 @section('contenido') 
-        <h1>Hola desde el Dashboard del administrador</h1>
+        
         {{--Esto es una demo del buscador basico--}}
         {{--Es para probar, despues sera eliminada--}}
         <form action="{{route('api.course.search')}}">

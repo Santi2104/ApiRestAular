@@ -90,8 +90,13 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $alumno = Student::find($request->input('usuario_id'));
+        $horario = $request->input('horario_id');
+
+        $alumno->studentSchedules()->detach($horario);
+
+        return $alumno;
     }
 }

@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('prueba', function () {
-    return view('prueba');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -88,4 +84,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('/users-admin', 'UserController@index')->name('user.admin.index');
     Route::get('/users-student', 'UserController@index')->name('user.student.index');
     Route::get('/users-professor', 'UserController@index')->name('user.professor.index');
+});
+
+Route::group(['prefix' => 'bedel-exactas', 'namespace' => 'Exactas'], function () {
+    Route::get('/', 'ExactasController@dashboard')->name('exactas.dashboard');
 });

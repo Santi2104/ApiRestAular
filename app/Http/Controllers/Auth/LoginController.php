@@ -50,7 +50,7 @@ class LoginController extends Controller
     
         }elseif(auth()->user()->role->name == 'bedelExactas'){
     
-            return 'bedel-exactas/dashboard';
+            return 'bedel-exactas';
     
         }elseif(auth()->user()->role->name == 'bedelSalud'){
     

@@ -19,30 +19,6 @@
             </a>
         </li>
 
-        <li class="nav-item">
-            <a href="{{route('department.index')}}" class="nav-link">
-                <i class="nav-icon fas fa-archway"></i>
-                <p>
-                    Unidades Academicas
-                </p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="{{route('career.index')}}" class="nav-link">
-                <i class="nav-icon fas fa-clipboard"></i>
-                <p>
-                    Carreras
-                </p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="{{route('course.index')}}" class="nav-link">
-                <i class="nav-icon fas fa-chalkboard"></i>
-                <p>
-                    Materias
-                </p>
-            </a>
-        </li>
         <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-door-open"></i>
@@ -51,17 +27,6 @@
                     <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{route('building.index')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>
-                            Edificios
-                            
-                        </p>
-                    </a>
-                </li>
-            </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{route('classroom.index')}}" class="nav-link">
@@ -87,21 +52,10 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{route('period.index')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>
-                            Periodo academico
-                            
-                        </p>
-                    </a>
-                </li>
-            </ul>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
                     <a href="{{route('schedule.index')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
-                            Horarios(no)
+                            Crear Horario
                             
                         </p>
                     </a>
@@ -120,31 +74,7 @@
                         <li class="nav-item">
                             <a href="{{route('schedule.exactas.index')}}" class="nav-link">
                                 <i class="far fa-dot-circle nav-icon"></i>
-                                <p>Depto de Exactas</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-dot-circle nav-icon"></i>
-                                <p>Depto de Aplicadas</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-dot-circle nav-icon"></i>
-                                <p>Depto de Humanidades</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-dot-circle nav-icon"></i>
-                                <p>Depto de Sociales</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-dot-circle nav-icon"></i>
-                                <p>Depto de Salud</p>
+                                <p>Departamento de Exactas</p>
                             </a>
                         </li>
                     </ul>
@@ -190,16 +120,6 @@
                     <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="{{route('user.admin.index')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>
-                            Administradores
-                        </p>
-                    </a>
-                </li>
-            </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="#" class="nav-link">

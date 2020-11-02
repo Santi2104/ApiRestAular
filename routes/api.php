@@ -56,5 +56,6 @@ Route::namespace('Api')->group(function () {
 
     Route::get('students', 'StudentController@index');//Con esta ruta obtenes los horarios para el calendario (mandas solo el id del usuario)
     Route::post('students', 'StudentController@store');//Con esta ruta cargas los horarios (mandas id de usuario y arreglo de horarios)
+    Route::delete('students', 'StudentController@destroy');
 
 });

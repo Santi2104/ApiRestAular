@@ -15,7 +15,7 @@ class BuildingController extends Controller
      */
     public function index()
     {
-        $edificios = Building::all();
+        $edificios = Building::all(['id', 'display_name', 'description']);
         return view('layouts.pages.admin.building.index', compact('edificios'));
     }
 

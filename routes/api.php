@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+    // return $request->user();
+    return response()->json(['user' => $request->user()]);
 });
 
 Route::group(['prefix' => 'auth'], function () {

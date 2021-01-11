@@ -22,7 +22,7 @@
                                     <th><a :href="setUrl(carrera.id)" type="button"
                                     class="btn btn-block btn-outline-primary">Editar</a>
                                     <a :href="setUrlCareer(carrera.id)" type="button"
-                                    class="btn btn-block btn-outline-warning">Ver materias</a>
+                                    class="btn btn-block btn-outline-secondary">Ver materias</a>
                                     </th>
                                 </tr>
                             </tbody>

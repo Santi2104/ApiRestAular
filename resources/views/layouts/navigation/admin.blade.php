@@ -101,7 +101,7 @@
                     <a href="{{route('schedule.index')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
-                            Horarios(no)
+                            Crear horarios
                             
                         </p>
                     </a>

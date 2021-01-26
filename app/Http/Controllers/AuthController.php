@@ -141,4 +141,18 @@ class AuthController extends Controller
 
         return response()->json(["message" => "El Email fue modificado de manera satisfactoria, Inicia sesion con tu nuevo Email"]);
     }
+
+    public function setName(Request $request, $id){
+
+        $request->validate([
+            'new_name' => 'required|string',
+        ]);
+
+        $user = User::find($id);
+        $user->name = $request['new_name'];
+        $user->save();
+
+        return response()->json(["message" => "Su nombre fue editado correctamente"]);
+
+    }
 }

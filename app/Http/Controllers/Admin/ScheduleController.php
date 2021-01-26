@@ -166,7 +166,7 @@ class ScheduleController extends Controller
                     ->get();
 
         //$ttl = now()->addMinutes(10);
-        $horarios = Cache::tags('horarios')->rememberForever('horarios.all', function () {
+        /*$horarios = Cache::tags('horarios')->rememberForever('horarios.all', function () {
             return  DB::table('academic_schedules')
             ->join('courses','course_id', '=', 'courses.id')
             ->join('careers','career_id', '=', 'careers.id')
@@ -176,7 +176,16 @@ class ScheduleController extends Controller
             ->select('courses.title', 'classrooms.name as aula' ,'class_types.name as tipo_clase', 'careers.name', 'academic_schedules.day', 'academic_schedules.start','academic_schedules.end', 'academic_schedules.status' , 'academic_schedules.id')
             ->where('departments.id', 1)
             ->get();
-        });
+        });*/
+        $horarios = DB::table('academic_schedules')
+        ->join('courses','course_id', '=', 'courses.id')
+        ->join('careers','career_id', '=', 'careers.id')
+        ->join('departments','department_id', '=', 'departments.id')
+        ->join('classrooms', 'classroom_id', '=', 'classrooms.id')
+        ->join('class_types', 'class_type_id', '=', 'class_types.id')
+        ->select('courses.title', 'classrooms.name as aula' ,'class_types.name as tipo_clase', 'careers.name', 'academic_schedules.day', 'academic_schedules.start','academic_schedules.end', 'academic_schedules.status' , 'academic_schedules.id')
+        ->where('departments.id', 1)
+        ->get();
                     
         return view('layouts.pages.admin.schedule.index-exactas', compact('datos', 'horarios'));
     }

@@ -30,7 +30,8 @@ class DatabaseSeeder extends Seeder
         	'name' => 'Sergio Denis',
 	        'email' => 'admin@mail.com',
 	        'password' => bcrypt('secret'),
-	        'role_id' => 1
+            'role_id' => 1,
+            'active' => 1
         ])
         ->each(function (\App\User $u) {
         	factory(\App\Student::class, 1)->create(['user_id' => $u->id]);
@@ -40,7 +41,8 @@ class DatabaseSeeder extends Seeder
         	'name' => 'Juan Carlos Bodoque',
 	        'email' => 'bedel_aplicadas@mail.com',
 	        'password' => bcrypt('secret'),
-	        'role_id' => 2
+            'role_id' => 2,
+            'active' => 1
         ])
         ->each(function (\App\User $u) {
         	factory(\App\Student::class, 1)->create(['user_id' => $u->id]);
@@ -50,7 +52,8 @@ class DatabaseSeeder extends Seeder
         	'name' => 'Tulio Triviño',
 	        'email' => 'bedel_exactas@mail.com',
 	        'password' => bcrypt('secret'),
-	        'role_id' => 3
+            'role_id' => 3,
+            'active' => 1
         ])
         ->each(function (\App\User $u) {
         	factory(\App\Student::class, 1)->create(['user_id' => $u->id]);
@@ -60,7 +63,8 @@ class DatabaseSeeder extends Seeder
         	'name' => 'Mario Hugo',
 	        'email' => 'bedel_humanidades@mail.com',
 	        'password' => bcrypt('secret'),
-	        'role_id' => 6
+            'role_id' => 6,
+            'active' => 1
         ])
         ->each(function (\App\User $u) {
         	factory(\App\Student::class, 1)->create(['user_id' => $u->id]);
@@ -70,7 +74,8 @@ class DatabaseSeeder extends Seeder
         	'name' => 'Juanín Juan Harry',
 	        'email' => 'bedel_salud@mail.com',
 	        'password' => bcrypt('secret'),
-	        'role_id' => 4
+            'role_id' => 4,
+            'active' => 1
         ])
         ->each(function (\App\User $u) {
         	factory(\App\Student::class, 1)->create(['user_id' => $u->id]);
@@ -80,21 +85,24 @@ class DatabaseSeeder extends Seeder
         	'name' => 'Patana',
 	        'email' => 'bedel_sociales@mail.com',
 	        'password' => bcrypt('secret'),
-	        'role_id' => 5
+            'role_id' => 5,
+            'active' => 1
         ])
         ->each(function (\App\User $u) {
         	factory(\App\Student::class, 1)->create(['user_id' => $u->id]);
         });
 
-        factory(\App\User::class, 500)->create([
-            'role_id' => 8
+        factory(\App\User::class, 100)->create([
+            'role_id' => 8,
+            'active' => 1
         ])
         ->each(function (\App\User $u) {
             factory(\App\Student::class, 1)->create(['user_id' => $u->id]);
         });
 
-        factory(\App\User::class, 300)->create([
-            'role_id' => 7
+        factory(\App\User::class, 50)->create([
+            'role_id' => 7,
+            'active' => 1
         ])
         ->each(function (\App\User $u) {
             factory(\App\Professor::class, 1)->create(['user_id' => $u->id]);

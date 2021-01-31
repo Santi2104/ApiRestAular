@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             ->OnUpdate('cascade');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('email_backup')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('active')->default(false);

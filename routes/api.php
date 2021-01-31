@@ -27,7 +27,11 @@ Route::group(['prefix' => 'auth'], function () {
     Route::group(['middleware' => 'auth:api'], function() {
         Route::get('logout', 'AuthController@logout');
         Route::get('user', 'AuthController@user');
+        Route::post('user/email', 'AuthController@checkEmail');
+        Route::post('user/name/{id}', 'AuthController@setName');
     });
+
+    Route::get('user/resetemail/{token}', 'AuthController@resetEmail');
 });
 
 Route::group([    
@@ -38,6 +42,7 @@ Route::group([
     Route::post('create', 'PasswordResetController@create');
     Route::get('find/{token}', 'PasswordResetController@find');
     Route::post('reset', 'PasswordResetController@reset');
+    Route::get('reset/{token}', 'PasswordResetController@succes');
 });
 
 Route::namespace('Api')->group(function () {
@@ -68,5 +73,7 @@ Route::namespace('Api')->group(function () {
     Route::get('students', 'StudentController@index');//Con esta ruta obtenes los horarios para el calendario (mandas solo el id del usuario)
     Route::post('students', 'StudentController@store');//Con esta ruta cargas los horarios (mandas id de usuario y arreglo de horarios)
     Route::delete('students', 'StudentController@destroy');
+
+    
 
 });

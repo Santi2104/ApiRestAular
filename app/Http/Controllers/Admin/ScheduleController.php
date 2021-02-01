@@ -12,6 +12,7 @@ use App\Schedule;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
@@ -87,7 +88,8 @@ class ScheduleController extends Controller
         'class_type_id' => $request->class_type_id,
         'day' => $arregloDias[$diainicial],
         'start' => $request->start1,
-        'end' => $request->end1
+        'end' => $request->end1,
+        'user_id' => Auth::user()->id
        ]);
 
        foreach($periodoinicial as $key => $a){

@@ -30,10 +30,13 @@ Vue.component('select-career', require('./components/admin/Course/SelectCareerCo
 Vue.component('classroom-component', require('./components/admin/classroom/ClassroomComponent.vue').default);
 Vue.component('show-classroom-schedule', require('./components/admin/classroom/ShowClassroomScheduleComponent.vue').default);
 Vue.component('last-schedule', require('./components/admin/schedule/LastScheduleComponent.vue').default);
-Vue.component('schedule-table', require('./components/admin/schedule/ScheduleTableComponent.vue').default);
-Vue.component('show-schedule', require('./components/admin/schedule/ShowScheduleComponent.vue').default)
-Vue.component('admin-table-component', require('./components/admin/user/AdminTableComponent.vue').default)
+Vue.component('schedule-table', require('./components/admin/schedule/ScheduleTableComponent.vue').default);//Este componente no deberia existir
+Vue.component('show-schedule', require('./components/admin/schedule/ShowScheduleComponent.vue').default);
+Vue.component('admin-table-component', require('./components/admin/user/AdminTableComponent.vue').default);
 
+//Componentes de el bedel de exactas
+Vue.component('exactas-schedule-index', require('./components/exactas/schedule/ExactasScheduleIndex').default);
+Vue.component('exactas-schedule-create', require('./components/exactas/schedule/ExactasScheduleCreate').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

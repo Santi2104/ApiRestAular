@@ -16,7 +16,7 @@
         
 
     <last-schedule datos = "{{$datos}}"></last-schedule>
-
+    {{url()->current()}}
 
 <div class="row">
     <div class="col-md-12">

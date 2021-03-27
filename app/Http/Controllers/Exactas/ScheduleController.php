@@ -98,12 +98,12 @@ class ScheduleController extends Controller
         foreach ($periodoinicial as $key => $a) {
             $c = Schedule::create([
                 'period_id' => $request->period_id,
+                'academic_schedule_id' => $academic->id,
                 'start' => $a,
                 'end' => $b[$key],
                 'color' => $request->color
             ]);
 
-            $c->academicSchedule()->attach($academic);
         };
 
         return redirect()->route('exactas.schedule.index');
@@ -117,7 +117,12 @@ class ScheduleController extends Controller
      */
     public function show($id)
     {
-        return view('layouts.pages.bedel-exactas.schedule.show', compact('id'));
+        $horarios = AcademicSchedule::where('id', $id)
+            ->with(['schedule'])
+            ->get();
+            
+        //return view('layouts.pages.bedel-exactas.schedule.show', compact('horarios'));
+        return $horarios;
     }
 
     /**

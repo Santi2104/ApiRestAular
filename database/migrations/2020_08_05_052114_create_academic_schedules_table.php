@@ -37,7 +37,8 @@ class CreateAcademicSchedulesTable extends Migration
             $table->string('group')->nullable();//En el caso de que el horario tenga alguna comision
             $table->string('description')->nullable();
             $table->string('message')->nullable();//Por si hay algun mensaje especial. Estoy probando
-            $table->boolean('status')->default(1);
+            $table->boolean('status')->default(1);//Si el horario es visible o no
+            $table->boolean('duplicate')->default(0);//0 no acepta duplicados - 1 horario acepta duplicado
             $table->timestamps();
         });
     }

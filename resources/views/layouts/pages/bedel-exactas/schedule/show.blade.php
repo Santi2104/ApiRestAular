@@ -14,68 +14,112 @@
         
         <section class="content">
             <div class="container-fluid">
+              <a href="{{route('exactas.schedule.index')}}" class="btn btn-primary mb-2">Volver</a>
               <div class="row">
                 <div class="col-md-3">
-                    <a href="{{route('exactas.schedule.index')}}" class="btn btn-primary mb-2">Volver</a>
+                    
                   <div class="sticky-top mb-3">
-                    <div class="card">
+                    <div class="card card-primary">
                       <div class="card-header">
-                        <h4 class="card-title">Detalles del horario</h4>
+                        <h3 class="card-title">Vista general</h3>
                       </div>
+                      <!-- /.card-header -->
                       <div class="card-body">
-                        <!-- the events -->
-                        <div id="external-events">
-                          <div class="external-event bg-success">Lunch</div>
-                          <div class="external-event bg-warning">Go home</div>
-                          <div class="external-event bg-info">Do homework</div>
-                          <div class="external-event bg-primary">Work on UI design</div>
-                          <div class="external-event bg-danger">Sleep tight</div>
-                          <div class="checkbox">
-                            <label for="drop-remove">
-                              <input type="checkbox" id="drop-remove">
-                              remove after drop
-                            </label>
-                          </div>
-                        </div>
+                        <strong><i class="fas fa-book mr-1"></i>Materia</strong>
+        
+                        <p class="text-muted">
+                          {{$horarios[0]->course}} - {{$horarios[0]->course}}
+                        </p>
+        
+                        <hr>
+        
+                        <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+        
+                        <p class="text-muted">Malibu, California</p>
+        
+                        <hr>
+        
+                        <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+        
+                        <p class="text-muted">
+                          <span class="tag tag-danger">UI Design</span>
+                          <span class="tag tag-success">Coding</span>
+                          <span class="tag tag-info">Javascript</span>
+                          <span class="tag tag-warning">PHP</span>
+                          <span class="tag tag-primary">Node.js</span>
+                        </p>
+        
+                        <hr>
+        
+                        <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+        
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
                       </div>
                       <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
-                    <div class="card">
-                      <div class="card-header">
-                        <h3 class="card-title">Create Event</h3>
-                      </div>
-                      <div class="card-body">
-                        <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
-                          <!--<button type="button" id="color-chooser-btn" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown">Color <span class="caret"></span></button>-->
-                          <ul class="fc-color-picker" id="color-chooser">
-                            <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
-                            <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
-                            <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
-                            <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
-                            <li><a class="text-muted" href="#"><i class="fas fa-square"></i></a></li>
-                          </ul>
-                        </div>
-                        <!-- /btn-group -->
-                        <div class="input-group">
-                          <input id="new-event" type="text" class="form-control" placeholder="Event Title">
-      
-                          <div class="input-group-append">
-                            <button id="add-new-event" type="button" class="btn btn-primary">Add</button>
-                          </div>
-                          <!-- /btn-group -->
-                        </div>
-                        <!-- /input-group -->
-                      </div>
-                    </div>
                   </div>
                 </div>
                 <!-- /.col -->
                 <div class="col-md-9">
-                  <div class="card card-primary">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 class="card-title">Vista detallada</h3>
+                    </div>
+                    <!-- /.card-header -->
                     <div class="card-body p-0">
-                      <!-- THE CALENDAR -->
-                      <div id="calendar"></div>
+                      <table class="table table-sm">
+                        <thead>
+                          <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Task</th>
+                            <th>Progress</th>
+                            <th style="width: 40px">Label</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1.</td>
+                            <td>Update software</td>
+                            <td>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-danger">55%</span></td>
+                          </tr>
+                          <tr>
+                            <td>2.</td>
+                            <td>Clean database</td>
+                            <td>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-warning" style="width: 70%"></div>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-warning">70%</span></td>
+                          </tr>
+                          <tr>
+                            <td>3.</td>
+                            <td>Cron job running</td>
+                            <td>
+                              <div class="progress progress-xs progress-striped active">
+                                <div class="progress-bar bg-primary" style="width: 30%"></div>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-primary">30%</span></td>
+                          </tr>
+                          <tr>
+                            <td>4.</td>
+                            <td>Fix and squish bugs</td>
+                            <td>
+                              <div class="progress progress-xs progress-striped active">
+                                <div class="progress-bar bg-success" style="width: 90%"></div>
+                              </div>
+                            </td>
+                            <td><span class="badge bg-success">90%</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                     <!-- /.card-body -->
                   </div>

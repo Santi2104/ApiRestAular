@@ -88,4 +88,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
 Route::group(['prefix' => 'bedel-exactas', 'namespace' => 'Exactas'], function () {
     Route::get('/', 'ExactasController@dashboard')->name('exactas.dashboard');
+
+    //horarios
+    Route::get('schedules', 'ScheduleController@index')->name('exactas.schedule.index');
+    Route::get('schedules/create', 'ScheduleController@create')->name('exactas.schedule.create');
+    Route::post('schedules', 'ScheduleController@store')->name('exactas.schedule.store');
+    Route::get('schedules/{id}', 'ScheduleController@show')->name('exactas.schedule.show');
 });

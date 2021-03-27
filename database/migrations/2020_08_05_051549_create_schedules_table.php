@@ -22,6 +22,7 @@ class CreateSchedulesTable extends Migration
             $table->dateTime('start');
             $table->dateTime('end');
             $table->string('color');
+            $table->string('message')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

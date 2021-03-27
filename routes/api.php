@@ -77,3 +77,8 @@ Route::namespace('Api')->group(function () {
     
 
 });
+
+//Rutas api auxiliares
+    Route::group(['prefix' => 'bedel-exactas', 'namespace' => 'Exactas',], function () {
+        Route::get('schedule-search/{id}', 'ExactasController@searchCourse');
+    });

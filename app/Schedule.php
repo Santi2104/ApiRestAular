@@ -10,7 +10,7 @@ class Schedule extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['period_id', 'start', 'end', 'color'];
+    protected $fillable = ['period_id', 'start', 'end', 'color', 'message', 'academic_schedule_id'];
 
     public function period()
     {
@@ -19,6 +19,6 @@ class Schedule extends Model
 
     public function academicSchedule()
     {
-        return $this->belongsToMany(AcademicSchedule::class,'academic_schedule_union');
+        return $this->belongsTo(AcademicSchedule::class);
     }
 }

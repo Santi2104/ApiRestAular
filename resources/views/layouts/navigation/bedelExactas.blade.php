@@ -11,7 +11,7 @@
         <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
         <li class="nav-item">
-            <a href="{{route('admin.dashboard')}}" class="nav-link">
+            <a href="{{route('exactas.dashboard')}}" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                     Home
@@ -52,10 +52,10 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{route('schedule.index')}}" class="nav-link">
+                    <a href="{{route('exactas.schedule.index')}}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
-                            Crear Horario
+                            Ver todos
                             
                         </p>
                     </a>

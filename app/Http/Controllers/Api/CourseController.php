@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\AcademicSchedule;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Course;
@@ -66,9 +67,12 @@ class CourseController extends Controller
 
     public function search(Request $request){
         
-        $busqueda = $request->get('search');
+        $busqueda = $request->input('search');
         $materia = Course::where('title', 'like', '%'.$busqueda.'%')->get();
 
-        return SearchResource::collection($materia);
+
+
+        
+        return $materia;
     }
 }

@@ -95,12 +95,11 @@ class ScheduleController extends Controller
        foreach($periodoinicial as $key => $a){
            $c = Schedule::create([
                'period_id' => $request->period_id,
+               'academic_schedule_id' => $academic->id,
                'start' => $a,
                'end' => $b[$key],
                'color' => $request->color
            ]);
-
-           $c->academicSchedule()->attach($academic);
 
        };
        

@@ -12,13 +12,7 @@
 
 @section('contenido') 
         
-        {{--Esto es una demo del buscador basico--}}
-        {{--Es para probar, despues sera eliminada--}}
-        <form action="{{route('api.course.search')}}">
-                @csrf
-                <input type="search" name="search" id="search">
-                <button type="submit">Enviar</button>
-        </form>
+        <h1>Contenido</h1>
 
        
 @endsection

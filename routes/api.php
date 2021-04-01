@@ -46,28 +46,31 @@ Route::group([
 });
 
 Route::namespace('Api')->group(function () {
-    
-    Route::get('buildings', 'BuildingController@index');
-    Route::get('buildings/{id}', 'BuildingController@show');
+    //Las rutas comentadas serán eliminadas en la proxima revisión
+   // Route::get('buildings', 'BuildingController@index');
+   // Route::get('buildings/{id}', 'BuildingController@show');
 
-    Route::get('classrooms', 'ClassroomController@index');
-    Route::get('classrooms/{id}', 'ClassroomController@show');
+   // Route::get('classrooms', 'ClassroomController@index');
+   // Route::get('classrooms/{id}', 'ClassroomController@show');
 
-    Route::get('schedules', 'ScheduleController@index');
-    Route::get('schedules/{id}', 'ScheduleController@show');
+   // Route::get('schedules', 'ScheduleController@index');
+   // Route::get('schedules/{id}', 'ScheduleController@show');
 
-    Route::get('careers/search', 'CareerController@search')->name('api.careers.search');
-    Route::get('careers', 'CareerController@index');
-    Route::get('careers/{id}', 'CareerController@show');
+   // Route::get('careers/search', 'CareerController@search')->name('api.careers.search');
+   // Route::get('careers', 'CareerController@index');
+   // Route::get('careers/{id}', 'CareerController@show');
 
 
     //ruta para la busqueda de horarios por materia
-    Route::get('course/search', 'CourseController@search')->name('api.course.search');
+   // Route::get('search/course', 'StudentController@search_course')->name('api.search.course');
+   // Route::get('course/schedule/{id}', 'StudentController@course_schedule')->name('api.course.schedule');
 
 
 
-    Route::get('horarios', 'AcademicScheduleController@index');
+   // Route::get('horarios', 'AcademicScheduleController@index');
+    //En la proxima revisión, esta ruta se elimina
     Route::get('horarios/aulas/{id}', 'AcademicScheduleController@classroomSchedule')->name('api.horarios.aula');
+    //esta ruta tambien se elimina
     Route::get('horarios/{id}', 'AcademicScheduleController@show');
 
     Route::get('students', 'StudentController@index');//Con esta ruta obtenes los horarios para el calendario (mandas solo el id del usuario)
@@ -78,7 +81,7 @@ Route::namespace('Api')->group(function () {
 
 });
 
-//Rutas api auxiliares
+//Rutas api auxiliares (Esto tambien se va)
     Route::group(['prefix' => 'bedel-exactas', 'namespace' => 'Exactas',], function () {
         Route::get('schedule-search/{id}', 'ExactasController@searchCourse');
     });

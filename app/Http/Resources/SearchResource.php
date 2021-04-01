@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Resources\Student\StudentAcademicSchedules;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class SearchResource extends JsonResource
@@ -19,7 +20,7 @@ class SearchResource extends JsonResource
             'code' => $this->code .': '. $this->title,
             'career' => new CareerResource($this->career),
             'team' => ProfessorResource::collection($this->professors),
-            'academicschedule' => AcademicScheduleResource::collection($this->academicSchedule)
+            'academicschedule' => new StudentAcademicSchedules($this->academicSchedule)
         ];
     }
 }

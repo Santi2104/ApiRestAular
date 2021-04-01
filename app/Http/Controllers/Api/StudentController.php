@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\AcademicSchedule;
+use App\Course;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AcademicScheduleResource;
+use App\Http\Resources\Student\StudentAcademicSchedules;
 use App\Student;
 use App\User;
 use Illuminate\Http\Request;
@@ -98,5 +101,20 @@ class StudentController extends Controller
         $alumno->studentSchedules()->detach($horario);
 
         return $alumno;
+    }
+
+    public function search_course(Request $request)
+    {
+        $busqueda = $request->input('search');
+        $materias = Course::where('title', 'like', '%'.$busqueda.'%')->get();
+
+        return response()->json(['data' => $materias]);
+    }
+
+    public function course_schedule($id)
+    {
+        $horario = AcademicSchedule::where('course_id', $id)->get();
+        
+        return response()->json(['data' => StudentAcademicSchedules::collection($horario)]);
     }
 }
